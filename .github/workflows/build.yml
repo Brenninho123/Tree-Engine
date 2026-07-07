@@ -74,6 +74,10 @@ jobs:
         haxelib run lime config ANDROID_NDK "$ANDROID_HOME/ndk-bundle"
         haxelib run lime config JAVA_HOME "$JAVA_HOME"
 
+    - name: Initialize Lime Android Target
+      run: |
+        echo "" | haxelib run lime setup android
+
     - name: Compile Project
       run: haxelib run lime build android -release
 
