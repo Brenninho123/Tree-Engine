@@ -67,8 +67,12 @@ jobs:
         haxelib install hmm
         haxelib run hmm setup
         haxelib run hmm install
-        echo "y" | haxelib run lime setup android
-        haxelib run lime setup
+
+    - name: Configure Lime Android Paths
+      run: |
+        haxelib run lime config ANDROID_SDK "$ANDROID_HOME"
+        haxelib run lime config ANDROID_NDK "$ANDROID_HOME/ndk-bundle"
+        haxelib run lime config JAVA_HOME "$JAVA_HOME"
 
     - name: Compile Project
       run: haxelib run lime build android -release
