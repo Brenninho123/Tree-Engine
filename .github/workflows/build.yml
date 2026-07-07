@@ -1,0 +1,41 @@
+name: Build Tree Engine
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Haxe
+      uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.3.4
+
+    - name: Install Dependencies
+      run: |
+        haxelib install lime
+        haxelib run lime setup
+
+    - name: Compile Project
+      run: lime build windows -release
+
+    - name: Package Artifact
+      shell: pwsh
+      run: |
+        Compress-Archive -Path export/windows/bin/* -DestinationPath "./TreeEngine (Windows).zip"
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: TreeEngine (Windows)
+        path: TreeEngine (Windows).zip
+        
