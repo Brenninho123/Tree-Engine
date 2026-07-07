@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    
+    <meta title="Tree Engine" package="com.brenninho.treeengine" version="1.0.0" company="Brenninho123" />
+    <app main="Main" file="TreeEngine" path="export" />
+    
+    <window width="1280" height="720" fps="60" background="0x000000" hardware="true" vsync="true" />
+    <window width="0" height="0" fullscreen="true" if="mobile" />
+
+    <source path="source" />
+    
+    <haxelib name="lime" />
+    <assets path="assets" rename="assets" />
+    <icon path="arts/icon.png" />
+
+    <haxedef name="HXCPP_GC_BIG_BLOCKS" if="cpp" />
+    <haxedef name="no_precompiled_headers" if="android" />
+    
+</project>
