@@ -15,6 +15,7 @@
     <icon path="arts/icon.png" />
 
     <haxedef name="HXCPP_GC_BIG_BLOCKS" if="cpp" />
-    <haxedef name="no_precompiled_headers" if="android" />
+    
+    <haxedef name="HXCPP_NO_PCH" if="android" />
     
 </project>
