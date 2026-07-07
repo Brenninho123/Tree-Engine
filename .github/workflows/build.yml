@@ -26,7 +26,7 @@ jobs:
         haxelib run lime setup
 
     - name: Compile Project
-      run: lime build windows -release
+      run: haxelib run lime build windows -release
 
     - name: Package Artifact
       shell: pwsh
@@ -38,4 +38,3 @@ jobs:
       with:
         name: TreeEngine (Windows)
         path: TreeEngine (Windows).zip
-        
