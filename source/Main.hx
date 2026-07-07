@@ -24,7 +24,7 @@ class Main extends Application
 
         switch (context.type) 
         {
-            case OPENGL, WEBGL, OPENGL_ES:
+            case OPENGL, WEBGL, OPENGLES:
                 var gl = context.gles2;
                 gl.clearColor(0.0, 0.0, 0.0, 1.0);
                 gl.clear(gl.COLOR_BUFFER_BIT);
