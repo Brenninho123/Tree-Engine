@@ -18,8 +18,8 @@
     
     <section if="android">
         <haxedef name="HXCPP_NO_PCH" />
-        <compilerflag name="-std=c++17" />
-        <compilerflag name="-stdlib=libc++" />
+        
+        <haxedef name="ANDROID_STL" value="c++_static" />
     </section>
     
 </project>
