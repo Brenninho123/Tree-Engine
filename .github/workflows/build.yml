@@ -79,7 +79,7 @@ jobs:
         echo "" | haxelib run lime setup android
 
     - name: Compile Project
-      run: haxelib run lime build android -release
+      run: haxelib run lime build android -release -DHXCPP_NO_PCH -DANDROID_STL=c++_static
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
